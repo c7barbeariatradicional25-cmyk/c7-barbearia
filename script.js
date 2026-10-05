@@ -1,21 +1,31 @@
 const year = document.getElementById("year");
+const toast = document.getElementById("toast");
 
 if (year) {
   year.textContent = new Date().getFullYear();
 }
 
-const links = document.querySelectorAll(".link-card");
+let toastTimer;
 
-links.forEach((link) => {
+document.querySelectorAll(".link-card").forEach((link) => {
   link.addEventListener("click", (event) => {
     const href = link.getAttribute("href");
 
     if (!href || href === "#") {
       event.preventDefault();
 
-      const name = link.dataset.name || "Link";
+      const name = link.dataset.name || "Este link";
 
-      console.log(`${name} ainda não possui link configurado.`);
+      if (toast) {
+        toast.textContent = `${name}: estamos configurando este acesso.`;
+        toast.classList.add("show");
+
+        clearTimeout(toastTimer);
+
+        toastTimer = setTimeout(() => {
+          toast.classList.remove("show");
+        }, 2200);
+      }
     }
   });
 });
