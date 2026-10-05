@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050505" />
 
   <title>C7 Barbearia Tradicional</title>
 
   <meta
     name="description"
-    content="C7 Barbearia Tradicional - Agendamentos, serviços, produtos e atendimento."
+    content="C7 Barbearia Tradicional — agendamento, serviços, produtos e atendimento."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
     rel="stylesheet"
@@ -23,112 +23,176 @@
 </head>
 
 <body>
+  <div class="noise"></div>
+
   <main class="page">
 
-    <section class="hero">
+    <header class="hero">
 
-      <div class="brand">
+      <div class="brand" aria-label="C7 Barbearia Tradicional">
         <div class="brand-mark">C-7</div>
 
-        <div class="brand-text">
-          <h1>BARBEARIA</h1>
-          <span>TRADICIONAL</span>
-        </div>
+        <div class="brand-name">BARBEARIA</div>
+        <div class="brand-subtitle">TRADICIONAL</div>
       </div>
 
-      <p class="eyebrow">ESTILO • TRADIÇÃO • IDENTIDADE</p>
+      <p class="eyebrow">GOIÂNIA • GO</p>
 
-      <h2>
-        Muito mais que um corte.
-        <span>Uma experiência C7.</span>
-      </h2>
+      <h1>
+        Seu estilo começa
+        <span>aqui.</span>
+      </h1>
 
-      <p class="description">
-        Agende seu horário, conheça nossos serviços e fique por dentro de tudo da C7.
+      <p class="intro">
+        Agende seu horário, conheça nossos serviços e acesse tudo da C7 em um só lugar.
       </p>
+
+    </header>
+
+    <section class="quick-info" aria-label="Informações rápidas">
+
+      <div>
+        <strong>C7</strong>
+        <span>Barbearia Tradicional</span>
+      </div>
+
+      <i></i>
+
+      <div>
+        <strong>PRETO & BRANCO</strong>
+        <span>Identidade C7</span>
+      </div>
 
     </section>
 
-    <section class="links">
+    <section class="links" aria-label="Links principais">
 
-      <a href="#" class="link-card primary" data-name="Agendamento">
-        <div class="link-icon">✂</div>
+      <a href="#" class="link-card featured" data-name="Agendamento">
 
-        <div class="link-content">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2v3M17 2v3M3.5 9.5h17M5.5 4h13a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/>
+            <path d="m9 15 2 2 4-5"/>
+          </svg>
+        </span>
+
+        <span class="copy">
           <strong>Agendar horário</strong>
-          <span>Escolha seu serviço, profissional e horário.</span>
-        </div>
+          <small>Escolha serviço, profissional, dia e horário.</small>
+        </span>
 
-        <div class="arrow">→</div>
+        <span class="arrow">↗</span>
+
       </a>
 
       <a href="#" class="link-card" data-name="WhatsApp">
-        <div class="link-icon">W</div>
 
-        <div class="link-content">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 11.5a8 8 0 0 1-11.8 7l-4.2 1.3 1.4-4A8 8 0 1 1 20 11.5Z"/>
+            <path d="M8.5 8.3c.4 2.7 2.5 4.8 5.2 5.2"/>
+          </svg>
+        </span>
+
+        <span class="copy">
           <strong>WhatsApp</strong>
-          <span>Fale diretamente com a equipe C7.</span>
-        </div>
+          <small>Fale diretamente com a equipe C7.</small>
+        </span>
 
-        <div class="arrow">→</div>
+        <span class="arrow">↗</span>
+
       </a>
 
       <a href="#" class="link-card" data-name="Serviços">
-        <div class="link-icon">S</div>
 
-        <div class="link-content">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m4 4 16 16M20 4 4 20"/>
+            <circle cx="6.5" cy="6.5" r="2.5"/>
+            <circle cx="6.5" cy="17.5" r="2.5"/>
+          </svg>
+        </span>
+
+        <span class="copy">
           <strong>Serviços</strong>
-          <span>Veja cortes, barba e demais serviços.</span>
-        </div>
+          <small>Corte, barba e experiências C7.</small>
+        </span>
 
-        <div class="arrow">→</div>
+        <span class="arrow">↗</span>
+
       </a>
 
       <a href="#" class="link-card" data-name="Produtos">
-        <div class="link-icon">P</div>
 
-        <div class="link-content">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 8h12l1 13H5L6 8Z"/>
+            <path d="M9 8V5a3 3 0 0 1 6 0v3"/>
+          </svg>
+        </span>
+
+        <span class="copy">
           <strong>Produtos</strong>
-          <span>Conheça os produtos disponíveis na barbearia.</span>
-        </div>
+          <small>Cuidados para manter o estilo fora da cadeira.</small>
+        </span>
 
-        <div class="arrow">→</div>
+        <span class="arrow">↗</span>
+
       </a>
 
       <a href="#" class="link-card" data-name="Como chegar">
-        <div class="link-icon">⌖</div>
 
-        <div class="link-content">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+            <circle cx="12" cy="10" r="2.5"/>
+          </svg>
+        </span>
+
+        <span class="copy">
           <strong>Como chegar</strong>
-          <span>Abra a localização da C7 no mapa.</span>
-        </div>
+          <small>Abra a rota e venha para a C7.</small>
+        </span>
 
-        <div class="arrow">→</div>
+        <span class="arrow">↗</span>
+
       </a>
 
       <a href="#" class="link-card" data-name="Sobre nós">
-        <div class="link-icon">C7</div>
 
-        <div class="link-content">
+        <span class="icon c7-icon">C7</span>
+
+        <span class="copy">
           <strong>Sobre nós</strong>
-          <span>Conheça a história e a essência da C7.</span>
-        </div>
+          <small>Conheça a história e a essência da barbearia.</small>
+        </span>
 
-        <div class="arrow">→</div>
+        <span class="arrow">↗</span>
+
       </a>
 
     </section>
 
-    <section class="footer-card">
-      <span>C7 BARBEARIA</span>
-      <p>TRADICIONAL</p>
+    <section class="signature">
+
+      <span class="line"></span>
+
+      <div>
+        <strong>C7 BARBEARIA</strong>
+        <small>TRADICIONAL</small>
+      </div>
+
+      <span class="line"></span>
+
     </section>
 
     <footer>
-      <p>© <span id="year"></span> C7 Barbearia</p>
+      <p>© <span id="year"></span> C7 Barbearia Tradicional</p>
     </footer>
 
   </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>
