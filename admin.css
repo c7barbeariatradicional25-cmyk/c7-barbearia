@@ -88,3 +88,16 @@ radial-gradient(circle at 50% 0%,rgba(255,255,255,.08),transparent 28%),#050505}
   .stat-card{min-height:132px;padding:14px}
   .stat-card strong{font-size:30px}
 }
+
+.secondary-login-btn{
+  height:48px;
+  border:1px solid var(--line)!important;
+  background:transparent!important;
+  color:#fff!important;
+}
+.first-access-note{
+  margin-top:14px!important;
+  color:#666!important;
+  font-size:9px!important;
+  line-height:1.5;
+}
