@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050505" />
+  <title>Serviços | C7 Barbearia Tradicional</title>
+  <meta name="description" content="Confira os serviços, durações e preços da C7 Barbearia Tradicional." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="services-page">
+  <main class="services-shell">
+    <header class="services-topbar">
+      <a href="index.html" class="back-link" aria-label="Voltar">←</a>
+      <img
+        class="services-logo"
+        src="https://cjtgjqxkyvgjlhylrvas.supabase.co/storage/v1/object/public/c7-assets/logos/logo-c7.png.png"
+        alt="C7 Barbearia Tradicional"
+      />
+      <span class="topbar-spacer"></span>
+    </header>
+
+    <section class="services-hero">
+      <span class="services-kicker">C7 BARBEARIA TRADICIONAL</span>
+      <h1>NOSSOS SERVIÇOS</h1>
+      <p>Valores, duração e opções disponíveis.</p>
+    </section>
+
+    <section class="services-toolbar">
+      <div class="services-search">
+        <span>⌕</span>
+        <input id="serviceSearch" type="search" placeholder="Pesquisar serviços..." autocomplete="off">
+      </div>
+
+      <a
+        class="services-book"
+        href="https://booksy.com/pt-br/instant-experiences/widget/129803?instant_experiences_enabled=true&ig_ix=true&is_fb=1&utm_source=ig&utm_medium=social&utm_content=link_in_bio&utm_id=1344207247310791_v2_s02_e1002&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAacYdLRKYl6lFYSUoS2syf4LGoz-lj35iz_Of9fWj-dL8Xd-lR5HooKL8ia5iQ_aem_JPq53RKWCwDliJ0v2n0XYw"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        AGENDAR HORÁRIO ↗
+      </a>
+    </section>
+
+    <section id="servicesList" class="services-list">
+      <div class="services-loading">Carregando serviços...</div>
+    </section>
+
+    <footer class="services-footer">
+      <span>C7 BARBEARIA</span>
+      <small>TRADICIONAL</small>
+    </footer>
+  </main>
+
+  <script src="servicos.js"></script>
+</body>
+</html>
