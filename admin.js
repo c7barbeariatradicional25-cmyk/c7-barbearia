@@ -10,6 +10,7 @@ const appView = document.getElementById("appView");
 const loginForm = document.getElementById("loginForm");
 const loginMessage = document.getElementById("loginMessage");
 const logoutBtn = document.getElementById("logoutBtn");
+const firstAccessBtn = document.getElementById("firstAccessBtn");
 const userName = document.getElementById("userName");
 const userRole = document.getElementById("userRole");
 const pageTitle = document.getElementById("pageTitle");
@@ -127,3 +128,45 @@ supabase.auth.onAuthStateChange((_event, session) => {
 });
 
 bootstrap();
+
+
+firstAccessBtn.addEventListener("click", async () => {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+
+  if (!email || !password) {
+    loginMessage.textContent = "Informe e-mail e uma senha com pelo menos 8 caracteres.";
+    return;
+  }
+
+  if (password.length < 8) {
+    loginMessage.textContent = "A senha precisa ter pelo menos 8 caracteres.";
+    return;
+  }
+
+  loginMessage.textContent = "Criando acesso...";
+
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      emailRedirectTo: window.location.origin + "/admin.html"
+    }
+  });
+
+  if (error) {
+    if (error.message?.toLowerCase().includes("already registered")) {
+      loginMessage.textContent = "Esse e-mail já possui acesso. Use o botão Entrar.";
+    } else {
+      loginMessage.textContent = "Não foi possível criar o acesso. Confira se o e-mail está autorizado.";
+    }
+    return;
+  }
+
+  if (data.session) {
+    loginMessage.textContent = "";
+    await loadProfile(data.user.id);
+  } else {
+    loginMessage.textContent = "Acesso criado. Confira seu e-mail para confirmar a conta e depois entre.";
+  }
+});
