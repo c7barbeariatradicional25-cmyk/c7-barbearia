@@ -31,12 +31,14 @@
 
         <label>
           <span>Senha</span>
-          <input id="password" type="password" autocomplete="current-password" required />
+          <input id="password" type="password" autocomplete="current-password" minlength="8" required />
         </label>
 
-        <button type="submit">ENTRAR</button>
+        <button id="loginBtn" type="submit">ENTRAR</button>
+        <button id="firstAccessBtn" class="secondary-login-btn" type="button">PRIMEIRO ACESSO</button>
       </form>
 
+      <p class="first-access-note">No primeiro acesso, use um e-mail previamente autorizado pela C7 e escolha sua senha.</p>
       <p id="loginMessage" class="login-message"></p>
     </section>
   </main>
