@@ -26,24 +26,41 @@ function render(items) {
     return;
   }
 
-  list.innerHTML = items.map((product) => `
-    <article class="product-card">
-      <div class="product-card-top">
-        <span class="product-index">${String(product.sort_order / 10).padStart(2, "0")}</span>
-        <span class="product-arrow">↗</span>
+  const grouped = items.reduce((acc, product) => {
+    const category = (product.category || "Geral").trim() || "Geral";
+    if (!acc[category]) acc[category] = [];
+    acc[category].push(product);
+    return acc;
+  }, {});
+
+  list.innerHTML = Object.entries(grouped).map(([category, products]) => `
+    <section class="product-category">
+      <div class="service-category-title">
+        <h2>${category}</h2>
+        <span>${products.length}</span>
       </div>
-      <div class="product-card-bottom">
-        <strong>${product.name}</strong>
-        <span>${money(product.price)}</span>
+      <div class="product-category-grid">
+        ${products.map((product) => `
+          <article class="product-card">
+            <div class="product-card-top">
+              <span class="product-index">${String(Math.max(1, Number(product.sort_order || 0))).padStart(2, "0")}</span>
+              <span class="product-arrow">↗</span>
+            </div>
+            <div class="product-card-bottom">
+              <strong>${product.name}</strong>
+              <span>${money(product.price)}</span>
+            </div>
+          </article>
+        `).join("")}
       </div>
-    </article>
+    </section>
   `).join("");
 }
 
 async function loadProducts() {
   try {
     const response = await fetch(
-      `${SUPABASE_URL}/rest/v1/products?select=id,name,price,sort_order&active=eq.true&order=sort_order.asc`,
+      `${SUPABASE_URL}/rest/v1/products?select=id,name,category,price,sort_order&active=eq.true&order=category.asc,sort_order.asc`,
       {
         headers: {
           apikey: SUPABASE_KEY,
@@ -69,7 +86,10 @@ search.addEventListener("input", () => {
     return;
   }
 
-  render(products.filter((product) => normalize(product.name).includes(term)));
+  render(products.filter((product) =>
+    normalize(product.name).includes(term) ||
+    normalize(product.category || "").includes(term)
+  ));
 });
 
 loadProducts();
