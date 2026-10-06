@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050505" />
+  <title>Produtos | C7 Barbearia Tradicional</title>
+  <meta name="description" content="Confira os produtos disponíveis na C7 Barbearia Tradicional." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="products-page">
+  <main class="products-shell">
+    <header class="services-topbar">
+      <a href="index.html" class="back-link" aria-label="Voltar">←</a>
+      <img
+        class="services-logo"
+        src="https://cjtgjqxkyvgjlhylrvas.supabase.co/storage/v1/object/public/c7-assets/logos/logo-c7.png.png"
+        alt="C7 Barbearia Tradicional"
+      />
+      <span class="topbar-spacer"></span>
+    </header>
+
+    <section class="products-hero">
+      <span class="services-kicker">C7 BARBEARIA TRADICIONAL</span>
+      <h1>PRODUTOS</h1>
+      <p>Cuidados para manter seu estilo também fora da cadeira.</p>
+    </section>
+
+    <section class="products-feature">
+      <div class="products-feature-overlay"></div>
+      <div>
+        <span>C7 STORE</span>
+        <strong>ESCOLHA O SEU.</strong>
+      </div>
+    </section>
+
+    <section class="services-toolbar">
+      <div class="services-search">
+        <span>⌕</span>
+        <input id="productSearch" type="search" placeholder="Pesquisar produtos..." autocomplete="off">
+      </div>
+    </section>
+
+    <section id="productsList" class="products-grid">
+      <div class="services-loading">Carregando produtos...</div>
+    </section>
+
+    <footer class="services-footer">
+      <span>C7 BARBEARIA</span>
+      <small>TRADICIONAL</small>
+    </footer>
+  </main>
+
+  <script src="produtos.js"></script>
+</body>
+</html>
