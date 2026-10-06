@@ -1,5 +1,5 @@
 const SUPABASE_ASSET_BASE = "https://cjtgjqxkyvgjlhylrvas.supabase.co/storage/v1/object/public/c7-assets/site/";
-const ASSET_VERSIONS = { "agendamento.webp": "202610061606" };
+const ASSET_VERSIONS = { "agendamento.webp": "202610061608" };
 
 document.querySelectorAll("[data-bg]").forEach((el) => {
   const file = el.dataset.bg;
