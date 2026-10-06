@@ -1,0 +1,90 @@
+:root {
+  --bg:#050505;
+  --panel:#0c0c0c;
+  --panel-2:#111;
+  --white:#fff;
+  --muted:#808080;
+  --line:rgba(255,255,255,.11);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:var(--bg);color:var(--white);font-family:"Montserrat",sans-serif}
+button,input{font:inherit}
+.hidden{display:none!important}
+
+.login-screen{min-height:100vh;display:grid;place-items:center;padding:22px;background:
+radial-gradient(circle at 50% 0%,rgba(255,255,255,.08),transparent 28%),#050505}
+.login-card{width:min(100%,420px);padding:30px;border:1px solid var(--line);background:#0a0a0a}
+.login-logo{display:block;width:180px;height:100px;object-fit:contain;margin:0 auto 18px}
+.system-label{display:block;text-align:center;font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:4px;color:#747474}
+.login-card h1{margin-top:12px;text-align:center;font-family:"Oswald",sans-serif;font-size:30px}
+.login-card>p{margin-top:7px;text-align:center;color:#777;font-size:11px}
+.login-form{display:grid;gap:14px;margin-top:26px}
+.login-form label{display:grid;gap:7px}
+.login-form label span{font-size:10px;color:#9b9b9b}
+.login-form input{height:48px;border:1px solid var(--line);outline:none;background:#050505;color:#fff;padding:0 13px}
+.login-form button{height:50px;border:0;background:#fff;color:#050505;font-family:"Oswald",sans-serif;letter-spacing:2px;cursor:pointer}
+.login-message{min-height:18px!important;margin-top:12px!important;color:#c8c8c8!important;font-size:10px!important}
+
+.app-shell{min-height:100vh;display:grid;grid-template-columns:240px 1fr}
+.sidebar{position:sticky;top:0;height:100vh;padding:22px 15px;display:flex;flex-direction:column;border-right:1px solid var(--line);background:#080808}
+.sidebar-brand{display:flex;align-items:center;gap:10px;padding:0 8px 20px;border-bottom:1px solid var(--line)}
+.sidebar-brand img{width:56px;height:42px;object-fit:contain}
+.sidebar-brand strong{display:block;font-family:"Oswald",sans-serif;font-size:14px;letter-spacing:1.5px}
+.sidebar-brand span{display:block;margin-top:2px;color:#696969;font-size:8px}
+.sidebar-nav{display:grid;gap:4px;margin-top:20px}
+.nav-item{height:42px;padding:0 12px;border:0;background:transparent;color:#777;text-align:left;font-size:11px;cursor:pointer}
+.nav-item:hover,.nav-item.active{background:#fff;color:#050505}
+.logout-btn{margin-top:auto;height:42px;border:1px solid var(--line);background:transparent;color:#888;cursor:pointer}
+
+.main-panel{min-width:0;padding:26px 28px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.eyebrow{display:block;margin-bottom:6px;color:#646464;font-family:"Oswald",sans-serif;font-size:9px;letter-spacing:3px}
+.topbar h1{font-family:"Oswald",sans-serif;font-size:34px;letter-spacing:.5px}
+.user-chip{text-align:right}
+.user-chip span{display:block;font-size:11px;font-weight:700}
+.user-chip small{display:block;margin-top:3px;color:#666;font-size:9px;text-transform:uppercase}
+
+.content-section{display:none;padding-top:24px}
+.content-section.active{display:block}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stat-card{min-height:150px;padding:17px;border:1px solid var(--line);background:linear-gradient(145deg,#101010,#080808)}
+.stat-card span{display:block;color:#8a8a8a;font-size:10px}
+.stat-card strong{display:block;margin-top:22px;font-family:"Oswald",sans-serif;font-size:36px}
+.stat-card small{display:block;margin-top:10px;color:#555;font-size:8px}
+
+.dashboard-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:12px;margin-top:12px}
+.panel-card{min-height:280px;padding:18px;border:1px solid var(--line);background:#090909}
+.panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.panel-head span{display:block;color:#666;font-family:"Oswald",sans-serif;font-size:8px;letter-spacing:2px}
+.panel-head h2{margin-top:4px;font-family:"Oswald",sans-serif;font-size:21px}
+.panel-head button{border:0;background:transparent;color:#777;font-size:9px;cursor:pointer}
+.empty-state{height:190px;margin-top:18px;display:grid;place-items:center;border:1px dashed rgba(255,255,255,.08);color:#595959;font-size:10px;text-align:center;padding:20px}
+
+.module-placeholder{min-height:360px;display:grid;place-items:center;align-content:center;text-align:center;border:1px solid var(--line);background:#090909}
+.module-placeholder span{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:3px;color:#555}
+.module-placeholder h2{margin-top:8px;font-family:"Oswald",sans-serif;font-size:34px}
+.module-placeholder p{max-width:420px;margin-top:10px;color:#666;font-size:10px;line-height:1.6}
+
+@media(max-width:960px){
+  .app-shell{grid-template-columns:84px 1fr}
+  .sidebar-brand div,.nav-item{font-size:0}
+  .sidebar-brand{justify-content:center;padding-inline:0}
+  .sidebar-brand img{width:52px}
+  .nav-item::first-letter{font-size:12px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .dashboard-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:640px){
+  .app-shell{display:block}
+  .sidebar{position:fixed;z-index:20;left:0;right:0;bottom:0;top:auto;width:auto;height:68px;padding:7px 8px;border-right:0;border-top:1px solid var(--line);flex-direction:row;background:#080808}
+  .sidebar-brand,.logout-btn{display:none}
+  .sidebar-nav{width:100%;margin:0;display:flex;gap:4px;overflow-x:auto}
+  .nav-item{flex:0 0 auto;height:52px;padding:0 13px;font-size:9px}
+  .main-panel{padding:18px 15px 90px}
+  .topbar h1{font-size:28px}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:9px}
+  .stat-card{min-height:132px;padding:14px}
+  .stat-card strong{font-size:30px}
+}
