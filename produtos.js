@@ -60,7 +60,7 @@ function render(items) {
 async function loadProducts() {
   try {
     const response = await fetch(
-      `${SUPABASE_URL}/rest/v1/products?select=id,name,category,price,sort_order,product_kind&active=eq.true&product_kind=in.(retail,both)&order=category.asc,sort_order.asc`,
+      `${SUPABASE_URL}/rest/v1/products?select=id,name,category,price,sort_order,product_kind,department&active=eq.true&department=eq.barbershop&product_kind=in.(retail,both)&order=category.asc,sort_order.asc`,
       {
         headers: {
           apikey: SUPABASE_KEY,
